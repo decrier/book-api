@@ -11,7 +11,9 @@ public class Main{
     public static void main(String[] args) throws Exception {
         HttpServer server = HttpServer.create(new InetSocketAddress(8080), 0);
         server.createContext("/", new HelloHandler());
-        server.createContext("/book", new BookHandler());
+
+        BookDAO dao = new BookDAOimpl();
+        server.createContext("/book", new BookHandler(dao));
         server.start();
         System.out.println("Server started at http://localhost:8080/");
     }
