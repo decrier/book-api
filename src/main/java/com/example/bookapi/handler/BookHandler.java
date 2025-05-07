@@ -1,5 +1,7 @@
-package com.example.bookapi;
+package com.example.bookapi.handler;
 
+import com.example.bookapi.dao.BookDAO;
+import com.example.bookapi.model.Book;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
@@ -28,6 +30,12 @@ public class BookHandler implements HttpHandler {
                     break;
                 case "POST":
                     handlePost(exchange);
+                    break;
+                case "PUT":
+                    handlePut(exchange);
+                    break;
+                case "DELETE":
+                    handleDelete(exchange);
                     break;
                 default:
                     exchange.sendResponseHeaders(405, -1);
@@ -81,6 +89,47 @@ public class BookHandler implements HttpHandler {
 
         byte[] bytes = mapper.writeValueAsBytes(newBook);
         sendJsonResponse(exchange, 201,bytes);
+    }
+
+    private void handlePut(HttpExchange exchange) throws Exception {
+        Book book =mapper.readValue(exchange.getRequestBody(), Book.class);
+        if (book.getId() <= 0
+            || book.getTitle() == null || book.getTitle().isBlank()
+            || book.getAuthor() == null || book.getAuthor().isBlank()) {
+            sendTextResponse(exchange, 400, "Falsche ID, Titel oder Autor");
+            return;
+        }
+
+        if (dao.findById(book.getId()) == null) {
+            sendTextResponse(exchange, 404, "Buch nicht gefunden");
+            return;
+        }
+
+        boolean ok = dao.update(book);
+        if (!ok) {
+            sendTextResponse(exchange, 500, "Updatefehler");
+            return;
+        }
+        byte[] data = mapper.writeValueAsBytes(book);
+        sendJsonResponse(exchange,200, data);
+    }
+
+    private void handleDelete(HttpExchange exchange) throws Exception {
+        String query = exchange.getRequestURI().getQuery();
+        if (query == null || !query.startsWith("id=")) {
+            sendTextResponse(exchange, 400, "ID-Parameter fehlt");
+            return;
+        }
+
+        int id = Integer.parseInt(query.substring(3));
+        boolean ok = dao.delete(id);
+        if (!ok) {
+            sendTextResponse(exchange, 404, "Buch nicht gefunden");
+            return;
+        }
+
+        exchange.sendResponseHeaders(204, -1);
+
     }
 
     private void sendJsonResponse(HttpExchange exchange, int statusCode, byte[] data) throws Exception {

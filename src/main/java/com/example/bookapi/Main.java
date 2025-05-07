@@ -1,5 +1,11 @@
 package com.example.bookapi;
 
+import com.example.bookapi.dao.BookDAO;
+import com.example.bookapi.dao.BookDAOimpl;
+import com.example.bookapi.dao.UserDAO;
+import com.example.bookapi.dao.UserDAOimpl;
+import com.example.bookapi.handler.BasicAuthHandler;
+import com.example.bookapi.handler.BookHandler;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
 import com.sun.net.httpserver.HttpServer;
@@ -12,8 +18,13 @@ public class Main{
         HttpServer server = HttpServer.create(new InetSocketAddress(8080), 0);
         server.createContext("/", new HelloHandler());
 
-        BookDAO dao = new BookDAOimpl();
-        server.createContext("/book", new BookHandler(dao));
+        BookDAO bookDao = new BookDAOimpl();
+        BookHandler bookHandler = new BookHandler(bookDao);
+
+        UserDAO userDAO = new UserDAOimpl();
+        BasicAuthHandler authHandler = new BasicAuthHandler(bookHandler,userDAO);
+
+        server.createContext("/book", authHandler);
         server.start();
         System.out.println("Server started at http://localhost:8080/");
     }
@@ -40,5 +51,4 @@ public class Main{
             }
         }
     }
-
 }

@@ -1,4 +1,4 @@
-package com.example.bookapi;
+package com.example.bookapi.util;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
