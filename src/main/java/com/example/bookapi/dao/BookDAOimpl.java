@@ -18,13 +18,18 @@ public class BookDAOimpl implements BookDAO {
             ps.setString(1, book.getTitle());
             ps.setString(2, book.getAuthor());
 
+            int affectedRows = ps.executeUpdate();
 
-            try (ResultSet generatedKeys = ps.getGeneratedKeys()) {
-                if (generatedKeys.next()) {
-                    book.setId(generatedKeys.getInt(1));
+            if (affectedRows == 1) {
+                try (ResultSet generatedKeys = ps.getGeneratedKeys()) {
+                    if (generatedKeys.next()) {
+                        book.setId(generatedKeys.getInt(1));
+                    }
                 }
+                return true;
+            } else {
+                return false;
             }
-            return ps.executeUpdate() == 1;
         } catch (SQLException e) {
             e.printStackTrace();
             return false;

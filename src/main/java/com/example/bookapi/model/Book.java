@@ -1,5 +1,7 @@
 package com.example.bookapi.model;
 
+import java.util.Objects;
+
 public class Book {
     private int id;
     private String title;
