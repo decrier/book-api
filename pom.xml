@@ -57,6 +57,33 @@
             <artifactId>jackson-databind</artifactId>
             <version>2.15.2</version>
         </dependency>
+
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-core</artifactId>
+            <version>11.8.0</version>  <!-- или последнюю доступную версию -->
+        </dependency>
+
+        <dependency>
+            <groupId>org.flywaydb</groupId>
+            <artifactId>flyway-mysql</artifactId>
+            <version>11.8.0</version>
+        </dependency>
+
     </dependencies>
 
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.flywaydb</groupId>
+                <artifactId>flyway-maven-plugin</artifactId>
+                <version>11.8.1</version>
+                <configuration>
+                    <url>jdbc:mariadb://localhost:3306/book_db</url>
+                    <user>root</user>
+                    <password></password>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
