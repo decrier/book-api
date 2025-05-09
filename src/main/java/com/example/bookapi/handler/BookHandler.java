@@ -5,6 +5,8 @@ import com.example.bookapi.model.Book;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sun.net.httpserver.HttpExchange;
 import com.sun.net.httpserver.HttpHandler;
+import io.micrometer.core.instrument.Timer;
+import io.micrometer.prometheusmetrics.PrometheusMeterRegistry;
 
 import java.io.OutputStream;
 import java.util.List;
@@ -14,13 +16,16 @@ public class BookHandler implements HttpHandler {
 
     private final ObjectMapper mapper = new ObjectMapper();
     private final BookDAO dao;
+    private final PrometheusMeterRegistry registry;
 
-    public BookHandler(BookDAO dao) {
+    public BookHandler(BookDAO dao, PrometheusMeterRegistry registry) {
+        this.registry = registry;
         this.dao = dao;
     }
 
     @Override
     public void handle(HttpExchange exchange) {
+        Timer.Sample sample = Timer.start(registry);
         try {
             String method = exchange.getRequestMethod();
 
@@ -42,6 +47,11 @@ public class BookHandler implements HttpHandler {
             }
         } catch (Exception e) {
             e.printStackTrace();
+        } finally {
+            sample.stop(Timer.builder("http.requests.duration")
+                    .description("Duration of HTTP requests")
+                    .tags("method", exchange.getRequestMethod(), "endpoint", "/book")
+                    .register(registry));
         }
     }
 
