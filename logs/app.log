@@ -1,0 +1,128 @@
+08:52:30.419 [main] INFO  com.example.bookapi.Main - Starting application...
+08:52:31.216 [main] WARN  o.m.jdbc.message.server.ErrorPacket - Error: 1193-HY000: Unknown system variable 'WSREP_ON'
+08:52:31.237 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:mariadb://localhost/book_db?user=root (MariaDB 10.4)
+08:52:31.427 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 2 migrations (execution time 00:00.152s)
+08:52:31.451 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema `book_db`: 2
+08:52:31.460 [main] INFO  o.f.core.internal.command.DbMigrate - Schema `book_db` is up to date. No migration necessary.
+08:52:31.767 [main] INFO  com.example.bookapi.Main - Server started at http://localhost:8080/
+08:56:47.629 [main] INFO  com.example.bookapi.Main - Starting application...
+08:56:48.315 [main] WARN  o.m.jdbc.message.server.ErrorPacket - Error: 1193-HY000: Unknown system variable 'WSREP_ON'
+08:56:48.336 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:mariadb://localhost/book_db?user=root (MariaDB 10.4)
+08:56:48.411 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 2 migrations (execution time 00:00.035s)
+08:56:48.426 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema `book_db`: 2
+08:56:48.432 [main] INFO  o.f.core.internal.command.DbMigrate - Schema `book_db` is up to date. No migration necessary.
+08:56:48.603 [main] INFO  com.example.bookapi.Main - Server started at http://localhost:8080/
+09:09:19.154 [main] INFO  com.example.bookapi.Main - Starting application...
+09:09:19.639 [main] DEBUG o.f.c.i.s.classpath.ClassPathScanner - Scanning for classpath resources at 'classpath:db/callback' ...
+09:09:19.639 [main] DEBUG o.f.c.i.s.classpath.ClassPathScanner - Determining location urls for classpath:db/callback using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@18b4aac2 ...
+09:09:19.640 [main] DEBUG o.f.c.i.s.classpath.ClassPathScanner - Unable to resolve location classpath:db/callback.
+09:09:19.640 [main] DEBUG o.f.c.i.s.classpath.ClassPathScanner - Scanning for classpath resources at 'classpath:db/migration' ...
+09:09:19.640 [main] DEBUG o.f.c.i.s.classpath.ClassPathScanner - Determining location urls for classpath:db/migration using ClassLoader jdk.internal.loader.ClassLoaders$AppClassLoader@18b4aac2 ...
+09:09:19.640 [main] DEBUG o.f.c.i.s.classpath.ClassPathScanner - Scanning URL: file:/C:/Users/Admin/IdeaProjects/book-api/book-api/target/classes/db/migration
+09:09:19.642 [main] DEBUG o.f.c.i.s.c.FileSystemClassPathLocationScanner - Scanning starting at classpath root in filesystem: C:\Users\Admin\IdeaProjects\book-api\book-api\target\classes\
+09:09:19.642 [main] DEBUG o.f.c.i.s.c.FileSystemClassPathLocationScanner - Scanning for resources in path: C:\Users\Admin\IdeaProjects\book-api\book-api\target\classes\db\migration (db/migration)
+09:09:19.644 [main] DEBUG o.f.c.i.s.classpath.ClassPathScanner - Found resource: db/migration/V1__Create_books_table.sql
+09:09:19.644 [main] DEBUG o.f.c.i.s.classpath.ClassPathScanner - Found resource: db/migration/V2__Create_users_table.sql
+09:09:19.644 [main] DEBUG o.f.c.i.s.classpath.ClassPathScanner - Scanning for classes at classpath:db/migration
+09:09:19.789 [main] DEBUG o.m.jdbc.message.server.OkPacket - Database change: is 'book_db'
+09:09:19.791 [main] DEBUG o.m.jdbc.client.impl.StandardClient - execute query: set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+09:09:19.792 [main] DEBUG o.m.jdbc.message.server.OkPacket - System variable change:  character_set_client = utf8mb4
+09:09:19.792 [main] DEBUG o.m.jdbc.message.server.OkPacket - System variable change:  character_set_results = utf8mb4
+09:09:19.792 [main] DEBUG o.m.jdbc.message.server.OkPacket - System variable change:  character_set_connection = utf8mb4
+09:09:19.815 [main] DEBUG o.f.c.i.r.ResourceNameValidator - Validating V2__Create_users_table.sql
+09:09:19.817 [main] DEBUG o.f.c.i.r.ResourceNameValidator - Validating V1__Create_books_table.sql
+09:09:19.829 [main] DEBUG o.m.jdbc.client.impl.StandardClient - execute query: SELECT @@GLOBAL.WSREP_ON
+09:09:19.830 [main] WARN  o.m.jdbc.message.server.ErrorPacket - Error: 1193-HY000: Unknown system variable 'WSREP_ON'
+09:09:19.832 [main] DEBUG o.f.database.mysql.MySQLDatabase - Unable to detect whether WSREP_ON=ON. Assuming not.
+09:09:19.832 [main] DEBUG o.m.jdbc.client.impl.StandardClient - execute query: SELECT event_name FROM information_schema.events LIMIT 1
+09:09:19.848 [main] INFO  org.flywaydb.core.FlywayExecutor - Database: jdbc:mariadb://localhost/book_db?user=root (MariaDB 10.4)
+09:09:19.849 [main] DEBUG org.flywaydb.core.FlywayExecutor - Database Type: MariaDB
+09:09:19.849 [main] DEBUG org.flywaydb.core.FlywayExecutor - Driver: MariaDB Connector/J 3.5.3
+09:09:19.850 [main] DEBUG org.flywaydb.core.FlywayExecutor - DDL Transactions Supported: false
+09:09:19.852 [main] DEBUG o.f.c.i.s.SchemaHistoryFactory - Schemas: 
+09:09:19.852 [main] DEBUG o.f.c.i.s.SchemaHistoryFactory - Default schema: null
+09:09:19.853 [main] DEBUG o.m.jdbc.client.impl.StandardClient - execute query: SELECT DATABASE()
+09:09:19.854 [main] DEBUG o.m.jdbc.client.impl.StandardClient - execute query: SELECT version()
+09:09:19.855 [main] DEBUG o.m.jdbc.client.impl.StandardClient - execute query: SELECT variable_name FROM information_schema.user_variables WHERE variable_value IS NOT NULL
+09:09:19.856 [main] DEBUG o.m.jdbc.client.impl.StandardClient - execute query: SELECT @@foreign_key_checks
+09:09:19.856 [main] DEBUG o.m.jdbc.client.impl.StandardClient - execute query: SELECT @@sql_safe_updates
+09:09:19.857 [main] DEBUG o.m.jdbc.client.impl.StandardClient - execute query: SHOW DATABASES LIKE 'RDSAdmin';
+09:09:19.857 [main] DEBUG o.m.jdbc.client.impl.StandardClient - execute query: SELECT DATABASE()
+09:09:19.859 [main] DEBUG o.m.jdbc.client.impl.StandardClient - execute query: SELECT DATABASE()
+09:09:19.860 [main] DEBUG o.m.jdbc.client.impl.StandardClient - execute query: SELECT SUBSTRING_INDEX(USER(),'@',1)
+09:09:19.874 [main] DEBUG org.flywaydb.core.FlywayExecutor - Scanning for script callbacks ...
+09:09:19.877 [main] DEBUG o.f.c.i.c.SqlScriptCallbackFactory - Scanning for SQL callbacks ...
+09:09:19.888 [main] DEBUG o.m.jdbc.client.impl.StandardClient - execute query: SELECT COUNT(1) FROM information_schema.schemata WHERE schema_name=? LIMIT 1
+09:09:19.889 [main] DEBUG o.f.core.internal.command.DbValidate - Validating migrations ...
+09:09:19.891 [main] DEBUG o.m.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+09:09:19.892 [main] DEBUG o.m.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+09:09:19.895 [main] DEBUG o.f.c.a.c.ClassicConfiguration - CherryPickConfigurationExtension not found
+09:09:19.909 [main] DEBUG o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V2__Create_users_table.sql (filename: V2__Create_users_table.sql)
+09:09:19.910 [main] DEBUG o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V1__Create_books_table.sql (filename: V1__Create_books_table.sql)
+09:09:19.911 [main] DEBUG o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V2__Create_users_table.sql (filename: V2__Create_users_table.sql)
+09:09:19.911 [main] DEBUG o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V1__Create_books_table.sql (filename: V1__Create_books_table.sql)
+09:09:19.912 [main] DEBUG o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V2__Create_users_table.sql (filename: V2__Create_users_table.sql)
+09:09:19.913 [main] DEBUG o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V1__Create_books_table.sql (filename: V1__Create_books_table.sql)
+09:09:19.913 [main] DEBUG o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V2__Create_users_table.sql (filename: V2__Create_users_table.sql)
+09:09:19.913 [main] DEBUG o.f.core.internal.scanner.Scanner - Filtering out resource: db/migration/V1__Create_books_table.sql (filename: V1__Create_books_table.sql)
+09:09:19.913 [main] DEBUG o.m.jdbc.client.impl.StandardClient - execute query: SELECT variable_name FROM information_schema.user_variables WHERE variable_value IS NOT NULL
+09:09:19.915 [main] DEBUG o.m.jdbc.client.impl.StandardClient - execute query: SET foreign_key_checks=?, sql_safe_updates=?
+09:09:19.915 [main] DEBUG o.m.jdbc.client.impl.StandardClient - execute query: SELECT TABLE_SCHEMA TABLE_CAT, NULL TABLE_SCHEM, TABLE_NAME,   IF(TABLE_SCHEMA IN ('mysql', 'performance_schema', 'sys'), IF(TABLE_TYPE='BASE TABLE', 'SYSTEM TABLE', IF(TABLE_TYPE='VIEW', 'SYSTEM VIEW', TABLE_TYPE)), IF(TABLE_TYPE='BASE TABLE' or TABLE_TYPE='SYSTEM VERSIONED', 'TABLE', IF(TABLE_TYPE='TEMPORARY', 'LOCAL TEMPORARY', TABLE_TYPE))) as TABLE_TYPE,  TABLE_COMMENT REMARKS, NULL TYPE_CAT, NULL TYPE_SCHEM, NULL TYPE_NAME, NULL SELF_REFERENCING_COL_NAME,  NULL REF_GENERATION FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='book_db' AND TABLE_NAME LIKE 'flyway_schema_history' ORDER BY TABLE_TYPE,TABLE_CAT,TABLE_SCHEMA,TABLE_NAME
+09:09:19.928 [main] DEBUG o.m.jdbc.client.impl.StandardClient - execute query: SELECT `installed_rank`,`version`,`description`,`type`,`script`,`checksum`,`installed_on`,`installed_by`,`execution_time`,`success` FROM `book_db`.`flyway_schema_history` WHERE `installed_rank` > ? ORDER BY `installed_rank`
+09:09:19.941 [main] DEBUG o.m.jdbc.client.impl.StandardClient - execute query: COMMIT
+09:09:19.941 [main] DEBUG o.m.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+09:09:19.942 [main] DEBUG o.m.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+09:09:19.943 [main] INFO  o.f.core.internal.command.DbValidate - Successfully validated 2 migrations (execution time 00:00.052s)
+09:09:19.948 [main] DEBUG o.m.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+09:09:19.948 [main] DEBUG o.m.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+09:09:19.949 [main] DEBUG o.m.jdbc.client.impl.StandardClient - execute query: SELECT COUNT(1) FROM information_schema.schemata WHERE schema_name=? LIMIT 1
+09:09:19.950 [main] DEBUG o.f.core.internal.command.DbSchemas - Skipping creation of existing schema: `book_db`
+09:09:19.950 [main] DEBUG o.m.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+09:09:19.951 [main] DEBUG o.m.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+09:09:19.951 [main] DEBUG o.m.jdbc.client.impl.StandardClient - execute query: SELECT variable_name FROM information_schema.user_variables WHERE variable_value IS NOT NULL
+09:09:19.951 [main] DEBUG o.m.jdbc.client.impl.StandardClient - execute query: SET foreign_key_checks=?, sql_safe_updates=?
+09:09:19.952 [main] DEBUG o.m.jdbc.client.impl.StandardClient - execute query: SELECT TABLE_SCHEMA TABLE_CAT, NULL TABLE_SCHEM, TABLE_NAME,   IF(TABLE_SCHEMA IN ('mysql', 'performance_schema', 'sys'), IF(TABLE_TYPE='BASE TABLE', 'SYSTEM TABLE', IF(TABLE_TYPE='VIEW', 'SYSTEM VIEW', TABLE_TYPE)), IF(TABLE_TYPE='BASE TABLE' or TABLE_TYPE='SYSTEM VERSIONED', 'TABLE', IF(TABLE_TYPE='TEMPORARY', 'LOCAL TEMPORARY', TABLE_TYPE))) as TABLE_TYPE,  TABLE_COMMENT REMARKS, NULL TYPE_CAT, NULL TYPE_SCHEM, NULL TYPE_NAME, NULL SELF_REFERENCING_COL_NAME,  NULL REF_GENERATION FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='book_db' AND TABLE_NAME LIKE 'flyway_schema_history' ORDER BY TABLE_TYPE,TABLE_CAT,TABLE_SCHEMA,TABLE_NAME
+09:09:19.956 [main] DEBUG o.m.jdbc.client.impl.StandardClient - execute query: SELECT variable_name FROM information_schema.user_variables WHERE variable_value IS NOT NULL
+09:09:19.957 [main] DEBUG o.m.jdbc.client.impl.StandardClient - execute query: SET foreign_key_checks=?, sql_safe_updates=?
+09:09:19.961 [main] DEBUG o.m.jdbc.client.impl.StandardClient - execute query: SELECT GET_LOCK(?,10)
+09:09:19.963 [main] DEBUG o.f.c.a.c.ClassicConfiguration - CherryPickConfigurationExtension not found
+09:09:19.963 [main] DEBUG o.m.jdbc.client.impl.StandardClient - execute query: SELECT variable_name FROM information_schema.user_variables WHERE variable_value IS NOT NULL
+09:09:19.964 [main] DEBUG o.m.jdbc.client.impl.StandardClient - execute query: SET foreign_key_checks=?, sql_safe_updates=?
+09:09:19.966 [main] DEBUG o.m.jdbc.client.impl.StandardClient - execute query: SELECT TABLE_SCHEMA TABLE_CAT, NULL TABLE_SCHEM, TABLE_NAME,   IF(TABLE_SCHEMA IN ('mysql', 'performance_schema', 'sys'), IF(TABLE_TYPE='BASE TABLE', 'SYSTEM TABLE', IF(TABLE_TYPE='VIEW', 'SYSTEM VIEW', TABLE_TYPE)), IF(TABLE_TYPE='BASE TABLE' or TABLE_TYPE='SYSTEM VERSIONED', 'TABLE', IF(TABLE_TYPE='TEMPORARY', 'LOCAL TEMPORARY', TABLE_TYPE))) as TABLE_TYPE,  TABLE_COMMENT REMARKS, NULL TYPE_CAT, NULL TYPE_SCHEM, NULL TYPE_NAME, NULL SELF_REFERENCING_COL_NAME,  NULL REF_GENERATION FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA='book_db' AND TABLE_NAME LIKE 'flyway_schema_history' ORDER BY TABLE_TYPE,TABLE_CAT,TABLE_SCHEMA,TABLE_NAME
+09:09:19.968 [main] DEBUG o.m.jdbc.client.impl.StandardClient - execute query: SELECT `installed_rank`,`version`,`description`,`type`,`script`,`checksum`,`installed_on`,`installed_by`,`execution_time`,`success` FROM `book_db`.`flyway_schema_history` WHERE `installed_rank` > ? ORDER BY `installed_rank`
+09:09:19.969 [main] INFO  o.f.core.internal.command.DbMigrate - Current version of schema `book_db`: 2
+09:09:19.970 [main] DEBUG o.m.jdbc.client.impl.StandardClient - execute query: SELECT RELEASE_LOCK('Flyway--1221794651')
+09:09:19.976 [main] INFO  o.f.core.internal.command.DbMigrate - Schema `book_db` is up to date. No migration necessary.
+09:09:19.978 [main] DEBUG o.m.jdbc.client.impl.StandardClient - execute query: SELECT variable_name FROM information_schema.user_variables WHERE variable_value IS NOT NULL
+09:09:19.979 [main] DEBUG o.m.jdbc.client.impl.StandardClient - execute query: SET foreign_key_checks=?, sql_safe_updates=?
+09:09:19.981 [main] DEBUG o.m.jdbc.client.impl.StandardClient - execute query: set autocommit=0
+09:09:19.981 [main] DEBUG o.m.jdbc.message.server.OkPacket - System variable change:  autocommit = OFF
+09:09:19.981 [main] DEBUG o.m.jdbc.client.impl.StandardClient - execute query: set autocommit=1
+09:09:19.982 [main] DEBUG o.m.jdbc.message.server.OkPacket - System variable change:  autocommit = ON
+09:09:19.986 [main] DEBUG org.flywaydb.core.FlywayExecutor - Memory usage: 23 of 198M
+09:09:20.126 [main] DEBUG i.m.c.u.i.l.InternalLoggerFactory - Using SLF4J as the default logging framework
+09:09:20.174 [main] INFO  com.example.bookapi.Main - Server started at http://localhost:8080/
+09:09:47.465 [HTTP-Dispatcher] DEBUG o.m.jdbc.message.server.OkPacket - Database change: is 'book_db'
+09:09:47.466 [HTTP-Dispatcher] DEBUG o.m.jdbc.client.impl.StandardClient - execute query: set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+09:09:47.466 [HTTP-Dispatcher] DEBUG o.m.jdbc.message.server.OkPacket - System variable change:  character_set_client = utf8mb4
+09:09:47.466 [HTTP-Dispatcher] DEBUG o.m.jdbc.message.server.OkPacket - System variable change:  character_set_results = utf8mb4
+09:09:47.466 [HTTP-Dispatcher] DEBUG o.m.jdbc.message.server.OkPacket - System variable change:  character_set_connection = utf8mb4
+09:09:47.467 [HTTP-Dispatcher] DEBUG o.m.jdbc.client.impl.StandardClient - execute query: SELECT * FROM users WHERE username = ?
+09:09:47.474 [HTTP-Dispatcher] DEBUG o.m.jdbc.message.server.OkPacket - Database change: is 'book_db'
+09:09:47.474 [HTTP-Dispatcher] DEBUG o.m.jdbc.client.impl.StandardClient - execute query: set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+09:09:47.474 [HTTP-Dispatcher] DEBUG o.m.jdbc.message.server.OkPacket - System variable change:  character_set_client = utf8mb4
+09:09:47.474 [HTTP-Dispatcher] DEBUG o.m.jdbc.message.server.OkPacket - System variable change:  character_set_results = utf8mb4
+09:09:47.475 [HTTP-Dispatcher] DEBUG o.m.jdbc.message.server.OkPacket - System variable change:  character_set_connection = utf8mb4
+09:09:47.475 [HTTP-Dispatcher] DEBUG o.m.jdbc.client.impl.StandardClient - execute query: SELECT id, title, author FROM books
+09:11:00.653 [HTTP-Dispatcher] DEBUG o.m.jdbc.message.server.OkPacket - Database change: is 'book_db'
+09:11:00.653 [HTTP-Dispatcher] DEBUG o.m.jdbc.client.impl.StandardClient - execute query: set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+09:11:00.653 [HTTP-Dispatcher] DEBUG o.m.jdbc.message.server.OkPacket - System variable change:  character_set_client = utf8mb4
+09:11:00.653 [HTTP-Dispatcher] DEBUG o.m.jdbc.message.server.OkPacket - System variable change:  character_set_results = utf8mb4
+09:11:00.654 [HTTP-Dispatcher] DEBUG o.m.jdbc.message.server.OkPacket - System variable change:  character_set_connection = utf8mb4
+09:11:00.654 [HTTP-Dispatcher] DEBUG o.m.jdbc.client.impl.StandardClient - execute query: SELECT * FROM users WHERE username = ?
+09:11:00.658 [HTTP-Dispatcher] DEBUG o.m.jdbc.message.server.OkPacket - Database change: is 'book_db'
+09:11:00.659 [HTTP-Dispatcher] DEBUG o.m.jdbc.client.impl.StandardClient - execute query: set sql_mode=CONCAT(@@sql_mode,',STRICT_TRANS_TABLES'),session_track_system_variables = CONCAT(@@global.session_track_system_variables,',tx_isolation'),NAMES utf8mb4
+09:11:00.659 [HTTP-Dispatcher] DEBUG o.m.jdbc.message.server.OkPacket - System variable change:  character_set_client = utf8mb4
+09:11:00.659 [HTTP-Dispatcher] DEBUG o.m.jdbc.message.server.OkPacket - System variable change:  character_set_results = utf8mb4
+09:11:00.659 [HTTP-Dispatcher] DEBUG o.m.jdbc.message.server.OkPacket - System variable change:  character_set_connection = utf8mb4
+09:11:00.659 [HTTP-Dispatcher] DEBUG o.m.jdbc.client.impl.StandardClient - execute query: SELECT id, title, author FROM books
